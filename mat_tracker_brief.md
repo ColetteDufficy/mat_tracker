@@ -16,6 +16,9 @@ A user should be able to:
 * To present a weekly PA total time as a bar chart
 
 ### Wireframes
+### Wireframe of main page
 ![Wireframe1](Screengrabs/Screenshot%202023-02-03%20at%2011.57.33.png)
+### Wireframe of welcome splash page
 ![Wireframe1](Screengrabs/Screenshot%202023-02-03%20at%2011.57.49.png)
+### Wireframe of adding new activity
 ![Wireframe1](Screengrabs/Screenshot%202023-02-03%20at%2011.58.03.png)
