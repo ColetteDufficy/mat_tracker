@@ -14,3 +14,6 @@ A user should be able to:
 * User should be able to create a new exercise
 * To create a welcome splash page
 * To present a weekly PA total time as a bar chart
+
+### Wireframes
+![Wireframe](Screengrabs/Screenshot%202023-02-03%20at%2011.57.33.png)
