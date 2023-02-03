@@ -24,3 +24,5 @@ A user should be able to:
 ![Wireframe1](Screengrabs/Screenshot%202023-02-03%20at%2011.58.03.png)
 ### Wireframe of updating the selected activity
 ![Wireframe1](Screengrabs/Screenshot%202023-02-03%20at%2012.22.23.png)
+### Wireframe of components & containers
+![Wireframe1](Screengrabs/Screenshot%202023-02-03%20at%2013.57.24.png)
