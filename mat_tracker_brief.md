@@ -17,12 +17,15 @@ A user should be able to:
 
 ### Wireframes
 ### Wireframe of main page
-![Wireframe1](Screengrabs/Screenshot%202023-02-03%20at%2011.57.33.png)
+![Wireframe1](Screengrabs/Screenshot%202023-02-03%20at%2014.24.33.png)
 ### Wireframe of welcome splash page
 ![Wireframe1](Screengrabs/Screenshot%202023-02-03%20at%2011.57.49.png)
 ### Wireframe of adding new activity
-![Wireframe1](Screengrabs/Screenshot%202023-02-03%20at%2011.58.03.png)
+![Wireframe1](Screengrabs/Screenshot%202023-02-03%20at%2014.25.17.png)
 ### Wireframe of updating the selected activity
-![Wireframe1](Screengrabs/Screenshot%202023-02-03%20at%2012.22.23.png)
+![Wireframe1](Screengrabs/Screenshot%202023-02-03%20at%2014.25.41.png)
+### Wireframe of adding a new exercise
+![Wireframe1](Screengrabs/Screenshot%202023-02-03%20at%2014.26.18.png)
 ### Wireframe of components & containers
-![Wireframe1](Screengrabs/Screenshot%202023-02-03%20at%2013.57.24.png)
+![Wireframe1](Screengrabs/Screenshot%202023-02-03%20at%2014.27.05.png)
+
