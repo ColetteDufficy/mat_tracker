@@ -1,10 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import ActivitiesWeekContainer from './containers/ActivitiesWeek';
 
 function App() {
   return (
-    <h1>Hello World!</h1>
+    <>
+      <p>List of activities</p>
+      <ActivitiesWeekContainer/>
+    </>
   );
 }
 
-export default App;
+export default App
