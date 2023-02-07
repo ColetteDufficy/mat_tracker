@@ -11,8 +11,16 @@ const ActivitiesService = {
         return fetch(baseURL + id, {
             method: "DELETE"
         })
-    }
+    },
 
+    postActivity(payload) {
+        return fetch(baseURL, {
+            method: "POST",
+            body: JSON.stringify(payload),
+            headers: { 'Content-Type': 'application/json' }
+        })
+            .then(res => res.json())
+    }
 }
 
 export default ActivitiesService

@@ -3,11 +3,7 @@ db.dropDatabase();
 
 db.activities.insertMany([
     {
-        exercise: 
-        {
-            name: "Yoga",
-            intensity: "moderate"
-        },
+        exercise: {name: "Yoga", intensity: "moderate"},
         time: 30,
         day: "Monday"
     },

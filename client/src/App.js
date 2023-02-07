@@ -4,7 +4,7 @@ import ActivitiesWeekContainer from './containers/ActivitiesWeek';
 function App() {
   return (
     <>
-      <p>List of activities</p>
+      <h2>LOGO</h2>
       <ActivitiesWeekContainer/>
     </>
   );
