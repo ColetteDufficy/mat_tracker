@@ -9,13 +9,19 @@ const ActivitiesWeekContainer = () => {
         ActivitiesService.getActivities()
             .then(activities => setActivities(activities))
     },
-        [])
+        []);
+
+    //Removes activity be ID 
+    const removeActivity = (id) => {
+        const activitiesToKeep = activities.filter(activity => activity._id !== id)
+        setActivities(activitiesToKeep);
+    };
 
     return (
         <>
-            <DayTotal activities={activities} /> 
+            <DayTotal activities={activities} removeActivity={removeActivity} />
         </>
-    )
+    );
 }
 
-export default ActivitiesWeekContainer
+export default ActivitiesWeekContainer;

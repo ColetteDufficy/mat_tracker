@@ -5,6 +5,14 @@ const ActivitiesService = {
     getActivities() {
         return fetch(baseURL)
             .then(res => res.json())
+    },
+
+    deleteActivity(id) {
+        return fetch(baseURL + id, {
+            method: "DELETE"
+        })
     }
+
 }
+
 export default ActivitiesService
