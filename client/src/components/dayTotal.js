@@ -7,7 +7,7 @@ const DayTotal = ({ activities, removeActivity }) => {
             {activities.map(activity => {
                 return (
                     <>
-                        <DayName activity={activity} key={activity._id} />
+                        <DayName activity={activity} />
                         <CompletedActivity activity={activity} key={activity._id} removeActivity={removeActivity} />
                     </>
                 )
