@@ -25,7 +25,6 @@ const ActivitiesWeekContainer = () => {
 
     return (
         <>
-            <h2>Put new activity here</h2>
             <ActivityForm addActivity={addActivity} />
             <h2>List of activities</h2>
             <DayTotal activities={activities} removeActivity={removeActivity} />
