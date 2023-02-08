@@ -38,7 +38,6 @@ const createRouter = function (collection) {
         .insertOne(newData)
         .then((result) => {
             res.json(result.ops[0]) //Might need to revisit!
-            // console.log("this is " + result.ops[0])
         })
         .catch((err) => {
             console.error(err);

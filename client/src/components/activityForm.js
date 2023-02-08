@@ -3,70 +3,79 @@ import ActivitiesService from "../services/ActivityService";
 
 const ActivitiesForm = ({ addActivity }) => {
 
-    const [formData, setFormData] = useState({
-        exercise: "",
-        intensity: "",
-        time: "",
-        day: ""
-    })
+    const [exerciseName, setExerciseName] = useState("")
+    const [exerciseIntensity, setExerciseIntensity] = useState("")
+    const [time, setTime] = useState("")
+    const [day, setDay] = useState("")
 
-    const onChange = (event) => {
-        const newFormData = Object.assign({}, formData);
-        newFormData[event.target.name] = event.target.value;
-        setFormData(newFormData);
+
+    const onNameInput = (event) => {
+        setExerciseName(event.target.value);
+    }
+    const onIntensityInput = (event) => {
+        setExerciseIntensity(event.target.value);
+    }
+    const onTimeInput = (event) => {
+        setTime(event.target.value);
+    }
+    const onDayInput= (event) => {
+        setDay(event.target.value);
     }
 
     const onSubmit = (event) => {
         event.preventDefault();
-        ActivitiesService.postActivity[formData]
+
+        const inputToSend = { 
+            exercise : {name: exerciseName, intensity: exerciseIntensity },
+            time: time,
+            day : day 
+         }
+
+        ActivitiesService.postActivity(inputToSend)
             .then((data) => {
                 addActivity(data)
             })
-
-        // Reset the form
-        setFormData({
-            exercise: "",
-            intensity: "",
-            time: "",
-            day: ""
-        })
+        setDay("")
+        setExerciseIntensity("")
+        setExerciseName("")
+        setTime("")        
     }
 
     return (
         <>
             <form onSubmit={onSubmit} id="activities-form">
                 <h2>Add activity</h2>
-                <label htmlFor="exercise.name">Exercise name: </label>
+                <label htmlFor="exercise-name">Exercise name: </label>
                 <input
-                    onChange={onChange}
+                    onChange={onNameInput}
                     type="text"
-                    id="exercise.name"
+                    id="exercise-name"
                     name="exercise"
-                    value={formData.exercise.name}
+                    value={exerciseName}
                 />
-                <label htmlFor="exercise.intensity">Intensity level: </label>
+                <label htmlFor="exercise-intensity">Intensity level: </label>
                 <input
-                    onChange={onChange}
+                    onChange={onIntensityInput}
                     type="text"
-                    id="exercise.intensity"
+                    id="exercise-intensity"
                     name="intensity"
-                    value={formData.exercise.intensity}
+                    value={exerciseIntensity}
                 />
                 <label htmlFor="time">Minutes: </label>
                 <input
-                    onChange={onChange}
+                    onChange={onTimeInput}
                     type="number"
                     id="time"
                     name="time"
-                    value={formData.time}
+                    value={time}
                 />
                 <label htmlFor="day">Day: </label>
                 <input
-                    onChange={onChange}
+                    onChange={onDayInput}
                     type="text"
                     id="day"
                     name="day"
-                    value={formData.day}
+                    value={day}
                 />
                 <input
                     type="submit"
