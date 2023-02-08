@@ -23,8 +23,8 @@ const ActivitiesService = {
     },
 
     //Added a put function to the update button
-    putActivity(payload) {
-        return fetch(baseURL, {
+    putActivity(payload, id) {
+        return fetch(baseURL + `${id}`, {
             method: "PUT",
             body: JSON.stringify(payload),
             headers: { 'Content-Type': 'application/json' }

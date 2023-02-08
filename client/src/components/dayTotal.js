@@ -8,7 +8,7 @@ const DayTotal = ({ activities,editActivity, removeActivity }) => {
                 return (
                     <>
                         <DayName activity={activity}  />
-                        <CompletedActivity activity={activity} key={activity._id} removeActivity={removeActivity} />
+                        <CompletedActivity editActivity={editActivity}activity={activity} key={activity._id} removeActivity={removeActivity} />
                     </>
                 )
             })
