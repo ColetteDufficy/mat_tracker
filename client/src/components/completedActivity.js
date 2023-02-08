@@ -1,7 +1,6 @@
 import ActivitiesService from "../services/ActivityService";
 
 const CompletedActivity = ({ activity, removeActivity }) => {
-    // console.log(activity);
     const handleDelete = () => {
         ActivitiesService.deleteActivity(activity._id)
         .then(() => {
@@ -11,8 +10,10 @@ const CompletedActivity = ({ activity, removeActivity }) => {
 
     return (
         <>
-            <h4>{activity.exercise.name}</h4>
+            <p>{activity.exercise.name}</p>
+            <p>{activity.time} mins</p>
             <button onClick={handleDelete}> 🗑 </button>
+            <hr></hr>
         </>
     )
 }

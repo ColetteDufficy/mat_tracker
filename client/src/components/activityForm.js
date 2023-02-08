@@ -18,21 +18,21 @@ const ActivitiesForm = ({ addActivity }) => {
     const onTimeInput = (event) => {
         setTime(event.target.value);
     }
-    const onDayInput= (event) => {
+    const onDayInput = (event) => {
         setDay(event.target.value);
     }
 
     const onSubmit = (event) => {
         event.preventDefault(); //preventing the form from refreshing itself on submit
 
-        const inputToSend = { // this is gathering all the input fields (event.target.value) and bundling them into the corrrect format for the db
+        const inputToSend = { // this is gathering all the input fields (event.target.value) and bundling them into the correct format for the db
             // the followiung is the db object structure
-            exercise : {name: exerciseName, intensity: exerciseIntensity },
+            exercise: { name: exerciseName, intensity: exerciseIntensity },
             time: time,
-            day : day 
-         }
+            day: day
+        }
 
-         // this is the "gathered input fields" ie "inputToSend", and posting "inputToSend" to the db as one const
+        // this is the "gathered input fields" ie "inputToSend", and posting "inputToSend" to the db as one const
         ActivitiesService.postActivity(inputToSend)
             .then((data) => {
                 addActivity(data)

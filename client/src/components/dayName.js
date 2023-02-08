@@ -4,7 +4,7 @@ const DayName = ({ activity }) => {
 
     return (
         <>
-            <p>{activity.day}</p>
+            <h2>{activity.day}</h2>
         </>
     )
 }
