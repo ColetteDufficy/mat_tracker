@@ -21,6 +21,7 @@ const EditForm = ({ activityToEdit, handleShowEditForm, editActivity }) => {
     const onDayInput = (event) => {
         setDay(event.target.value);
     }
+    
 
     const onSubmit = (event) => {
         event.preventDefault(); //preventing the form from refreshing itself on submit
@@ -33,20 +34,15 @@ const EditForm = ({ activityToEdit, handleShowEditForm, editActivity }) => {
             day: day
         }
 
-        editActivity(editedActivity)
-        
-        // this is the "gathered input fields" ie "inputToSend", and posting "inputToSend" to the db as one const
+
+        ActivitiesService.putActivity(editedActivity)
+            .then(() => {
+                editActivity(editedActivity)
+        })
         
         // TODO: make a function that handles a put request in Activity Service
 
         handleShowEditForm()
-    }
-
-    const handleEdit = () => {
-        ActivitiesService.putActivity(activity)
-        .then(() => {
-            editActivity(activity)
-        })
     }
 
     return (
@@ -86,7 +82,6 @@ const EditForm = ({ activityToEdit, handleShowEditForm, editActivity }) => {
                     value={day}
                 />
                 <input
-                    onClick = {handleEdit}
                     type="submit"
                     value="save"
                     id="save" />

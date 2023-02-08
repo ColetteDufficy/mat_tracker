@@ -48,11 +48,11 @@ const createRouter = function (collection) {
 
     // Create update function
     router.put('/', (req, res) => {
-        const id = req.params.id;
         const updateData = req.body;
+        updateData._id = undefined
         collection
         .updateOne(
-            {_id: ObjectID(id)},
+            {_id: ObjectID(updateData._id)},
             {$set: updateData}
         )
         .then((result) => {
