@@ -18,6 +18,16 @@ const ActivitiesWeekContainer = () => {
         setActivities(activitiesToKeep);
     };
 
+    const editActivity = (activity) => {
+        const mappedIds = activities.map((activityToBeMapped)=> activityToBeMapped._id )
+        const indexOfActivityToBeUpdated = mappedIds.indexOf(activity._id)
+
+        const copyOfActivities = [... activities]
+        copyOfActivities.splice(indexOfActivityToBeUpdated, 1, activity)
+
+        setActivities(copyOfActivities)
+
+    }
     //Add activity to the DB
     const addActivity = (activity) => {
         setActivities([...activities, activity])
@@ -27,7 +37,7 @@ const ActivitiesWeekContainer = () => {
         <>
             <ActivityForm addActivity={addActivity} />
             <h2>List of activities</h2>
-            <DayTotal activities={activities} removeActivity={removeActivity} />
+            <DayTotal editActivity={editActivity} activities={activities} removeActivity={removeActivity} />
         </>
     );
 }

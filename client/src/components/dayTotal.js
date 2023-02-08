@@ -1,7 +1,7 @@
 import DayName from "./DayName";
 import CompletedActivity from "./CompletedActivity";
 
-const DayTotal = ({ activities, removeActivity }) => {
+const DayTotal = ({ activities,editActivity, removeActivity }) => {
     return (
         <div>
             {activities.map(activity => {
