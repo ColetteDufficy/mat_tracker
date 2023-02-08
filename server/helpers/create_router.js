@@ -46,7 +46,8 @@ const createRouter = function (collection) {
         });
     });
 
-    router.put('/:id', (req, res) => {
+    // Create update function
+    router.put('/', (req, res) => {
         const id = req.params.id;
         const updateData = req.body;
         collection
@@ -59,30 +60,6 @@ const createRouter = function (collection) {
         })
 
     })
-    //     .catch((err) => {
-    //     console.error(err);
-    //       res.status(500);
-    //       res.json({ status: 500, error: err });
-    //     });
-    //   })
-
-    // router.put('/:id', (req, res) => {
-    //     const id = req.params.id;
-    //     const updatedData = req.body;
-    //     collection
-    //     .updateOne(
-    //       { _id: ObjectID(id)},
-    //       { $set: updatedData }
-    //     )
-    //     .then((result) => {
-    //       res.json(result)
-    //     })
-    //     .catch((err) => {
-    //       console.error(err);
-    //       res.status(500);
-    //       res.json({ status: 500, error: err });
-    //     });
-    //   })
 
     return router;
 

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ActivitiesService from '../services/ActivityService';
 
 const EditForm = ({ activityToEdit, handleShowEditForm, editActivity }) => {
 
@@ -41,6 +42,13 @@ const EditForm = ({ activityToEdit, handleShowEditForm, editActivity }) => {
         handleShowEditForm()
     }
 
+    const handleEdit = () => {
+        ActivitiesService.putActivity(activity)
+        .then(() => {
+            editActivity(activity)
+        })
+    }
+
     return (
         <>
             <form onSubmit={onSubmit} id="activities-form">
@@ -78,6 +86,7 @@ const EditForm = ({ activityToEdit, handleShowEditForm, editActivity }) => {
                     value={day}
                 />
                 <input
+                    onClick = {handleEdit}
                     type="submit"
                     value="save"
                     id="save" />

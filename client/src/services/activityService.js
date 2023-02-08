@@ -20,6 +20,16 @@ const ActivitiesService = {
             headers: { 'Content-Type': 'application/json' }
         })
             .then(res => res.json())
+    },
+
+    //Added a put function to the update button
+    putActivity(payload) {
+        return fetch(baseURL, {
+            method: "PUT",
+            body: JSON.stringify(payload),
+            headers: { 'Content-Type': 'application/json' }
+        })
+            .then(res => res.json())
     }
 }
 
