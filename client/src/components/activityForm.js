@@ -3,14 +3,14 @@ import ActivitiesService from "../services/ActivityService";
 
 const ActivitiesForm = ({ addActivity }) => {
 
-    const [exerciseName, setExerciseName] = useState("")
+    const [exerciseName, setExerciseName] = useState("") // this is the hook, useState. When the page first loads, the fields are initially empty ie ""
     const [exerciseIntensity, setExerciseIntensity] = useState("")
     const [time, setTime] = useState("")
     const [day, setDay] = useState("")
 
 
-    const onNameInput = (event) => {
-        setExerciseName(event.target.value);
+    const onNameInput = (event) => { // this is the action of the user typing in the field. And this will update the state of "exerciseName" when its called with the value of the field. And it will be called in the JSX, ie return statement, as part of the the onChnage listener event
+        setExerciseName(event.target.value)
     }
     const onIntensityInput = (event) => {
         setExerciseIntensity(event.target.value);
@@ -23,22 +23,24 @@ const ActivitiesForm = ({ addActivity }) => {
     }
 
     const onSubmit = (event) => {
-        event.preventDefault();
+        event.preventDefault(); //preventing the form from refreshing itself on submit
 
-        const inputToSend = { 
+        const inputToSend = { // this is gathering all the input fields (event.target.value) and bundling them into the corrrect format for the db
+            // the followiung is the db object structure
             exercise : {name: exerciseName, intensity: exerciseIntensity },
             time: time,
             day : day 
          }
 
+         // this is the "gathered input fields" ie "inputToSend", and posting "inputToSend" to the db as one const
         ActivitiesService.postActivity(inputToSend)
             .then((data) => {
                 addActivity(data)
             })
-        setDay("")
-        setExerciseIntensity("")
-        setExerciseName("")
-        setTime("")        
+        setDay("") // form fields being reset as empty 
+        setExerciseIntensity("")// form fields being reset as empty 
+        setExerciseName("")// form fields being reset as empty 
+        setTime("")        // form fields being reset as empty 
     }
 
     return (
