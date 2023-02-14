@@ -6,6 +6,8 @@ import ActivityForm from "../components/ActivityForm";
 const ActivitiesWeekContainer = () => {
     const [activities, setActivities] = useState([]);
 
+
+    // call useEffe t on initial loading of a page or each time the state changes ont he page, to sto pit relaoding repeatedly
     useEffect(() => {
         ActivitiesService.getActivities()
             .then(activities => setActivities(activities))
