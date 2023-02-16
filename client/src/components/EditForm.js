@@ -27,12 +27,13 @@ const EditForm = ({ activityToEdit, handleShowEditForm, editActivity }) => {
         event.preventDefault(); //preventing the form from refreshing itself on submit
 
         const editedActivityToBeSentToDb = { // this is gathering all the input fields (event.target.value) and bundling them into the correct format for the db
-            // the followiung is the db object structure
+            // the following is the db object structure
             exercise: { name: exerciseName, intensity: exerciseIntensity },
             time: time,
             day: day
         }
 
+        // this is a const showing all the gathered fields relating to the activity that needs to be edited... so when the 'update' window is shown, the inout fields will be populated with the data relating to the specific entry that needs to be updated. This has a db _id
         const editedActivity = {
             _id: activityToEdit._id,
             exercise: { name: exerciseName, intensity: exerciseIntensity },
@@ -40,12 +41,12 @@ const EditForm = ({ activityToEdit, handleShowEditForm, editActivity }) => {
             day: day
         }
         
+
         ActivitiesService.putActivity(editedActivityToBeSentToDb, activityToEdit._id)
             .then(() => {
                 editActivity(editedActivity)
         })
         
-        // TODO: make a function that handles a put request in Activity Service
 
         handleShowEditForm()
     }
