@@ -27,27 +27,28 @@ const EditForm = ({ activityToEdit, handleShowEditForm, editActivity }) => {
         event.preventDefault(); //preventing the form from refreshing itself on submit
 
         const editedActivityToBeSentToDb = { // this is gathering all the input fields (event.target.value) and bundling them into the correct format for the db
-            // the following is the db object structure
+            // the following is the db object structure, and its using the usestate
             exercise: { name: exerciseName, intensity: exerciseIntensity },
             time: time,
             day: day
         }
 
-        // this is a const showing all the gathered fields relating to the activity that needs to be edited... so when the 'update' window is shown, the inout fields will be populated with the data relating to the specific entry that needs to be updated. This has a db _id
+        // this is a const showing all the gathered fields relating to the activity that needs to be edited... so when the 'update' window is shown, the input fields will be populated with the data relating to that specific entry that needs to be updated. This is similar to the const above, but this has a db _id
         const editedActivity = {
             _id: activityToEdit._id,
             exercise: { name: exerciseName, intensity: exerciseIntensity },
             time: time,
             day: day
         }
-        
 
+
+        // the patch function needs to take in two arguments ie  putActivity(payload, id)
         ActivitiesService.putActivity(editedActivityToBeSentToDb, activityToEdit._id)
             .then(() => {
                 editActivity(editedActivity)
         })
         
-
+        /// this function comes from the completedActivity form 
         handleShowEditForm()
     }
 

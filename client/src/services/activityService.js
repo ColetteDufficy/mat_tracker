@@ -30,6 +30,7 @@ const ActivitiesService = {
 
 
     //Added a put function to the update button
+    // this take sin two arguments, the payload is the updated data and then a new id that is assiciated witht hat db entry
     putActivity(payload, id) {
         return fetch(baseURL + `${id}`, { // this is essentially the same as the postActivity function, but it takes inthe specific id - how does it see this???
             method: "PUT",

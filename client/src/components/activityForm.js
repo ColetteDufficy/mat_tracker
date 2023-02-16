@@ -50,7 +50,7 @@ const ActivitiesForm = ({ addActivity }) => {
         setTime("")        // form fields being reset as empty 
     }
 
-    // form onSubmit={onSubmit} is almost boiler plate for a form tag
+    // form onSubmit={onSubmit} is almost boiler plate for a form
     // 'htmlFor' and 'id' need to have the same value eg "exercise-name" or "exercise-intensity". This is for screenreaders(?)
     // value is the current state 
 
